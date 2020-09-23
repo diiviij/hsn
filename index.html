@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link href="styles.css">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,67 +31,8 @@
   </a> <br>
   <img src="https://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/epicfirstlight_dsc_2015186_lrg.jpg" width=""></img>
 
-  <center> <button  onclick="audio.play()" class="btn btn-primary btn-lg bg-danger">START</button>
-    <div id="dropZone">
-  <div
-    id="dropBox1"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>Mercury</p>
-  </div>
-  <div
-    id="dropBox2"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>VENUS</p>
-  </div>
-  <div
-    id="dropBox3"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>EARTH</p>
-  </div>
-  <div
-    id="dropBox4"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>MARS</p>
-  </div>
-</div><div
-  id="planets"
-  ondrop="drop(event)"
-  ondragover="allowDrop(event)"
->
-  <img
-    id="Mars"
-    src="m.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="EARTH"
-    src="e.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="Venus"
-    src="v.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="Mercury"
-    src="me.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  />
-    
+  <center> <a href="start.html>"<button  onclick="audio.play()" class="btn btn-primary btn-lg bg-danger">START</button></a>
+   
  <script>
 var audio = new Audio("d.mp3" ) ;
 
@@ -104,16 +44,7 @@ audio.play();
 audio.onended = function(){
 audio.play();
 }
- function allowDrop(event) {
-  event.preventDefault();
-}function drag(event) {
-  event.dataTransfer.setData("text", event.target.id);
-}function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("text");
-  event.target.appendChild(document.getElementById(data));
-}
-    </script>    
+   
 </center>
 </body>
 </html>
