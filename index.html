@@ -16,7 +16,7 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="index.js"></script>
+    <script src="stules.css"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -33,6 +33,65 @@
   <img src="https://www.nasa.gov/sites/default/files/styles/1x1_cardfeed/public/thumbnails/image/epicfirstlight_dsc_2015186_lrg.jpg" width=""></img>
 
   <center> <button  onclick="audio.play()" class="btn btn-primary btn-lg bg-danger">START</button>
+    <div id="dropZone">
+  <div
+    id="dropBox1"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>Mercury</p>
+  </div>
+  <div
+    id="dropBox2"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>VENUS</p>
+  </div>
+  <div
+    id="dropBox3"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>EARTH</p>
+  </div>
+  <div
+    id="dropBox4"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>MARS</p>
+  </div>
+</div><div
+  id="planets"
+  ondrop="drop(event)"
+  ondragover="allowDrop(event)"
+>
+  <img
+    id="Mars"
+    src="m.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="EARTH"
+    src="e.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="Venus"
+    src="v.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="Mercury"
+    src="me.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  />
     
  <script>
 var audio = new Audio("d.mp3" ) ;
@@ -45,7 +104,15 @@ audio.play();
 audio.onended = function(){
 audio.play();
 }
- 
+ function allowDrop(event) {
+  event.preventDefault();
+}function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}function drop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
     </script>    
 </center>
 </body>
