@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="styles.css"></link>
+  
+  <title>GAME</title>
+</head>
+<body>
+    <div id="dropZone">
+  <div
+    id="dropBox1"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>Mercury</p>
+  </div>
+  <div
+    id="dropBox2"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>VENUS</p>
+  </div>
+  <div
+    id="dropBox3"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>EARTH</p>
+  </div>
+  <div
+    id="dropBox4"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>MARS</p>
+  </div>
+</div><div
+  id="planets"
+  ondrop="drop(event)"
+  ondragover="allowDrop(event)"
+>
+  <img
+    id="Mars"
+    src="m.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="EARTH"
+    src="e.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="Venus"
+    src="v.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  /><img
+    id="Mercury"
+    src="me.png"
+    draggable="true"
+    ondragstart="drag(event)"
+    width="300"
+  />
+</body>
+</html>
