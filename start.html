@@ -8,7 +8,9 @@
 
   <title>GAME</title>
 </head>
-<body class="bo bg-dark">
+<body body {
+  background-image: url('space.png');
+}>
  <nav class="navbar navbar-light bg-danger">
   <a class="navbar-brand">PLANET GAME</a>
   <form class="form-inline">
@@ -16,77 +18,23 @@
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
   </form>
 </nav>
-    <div id="dropZone">
-  <div
-    id="dropBox1"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>Mercury</p>
-  </div>
-  <div
-    id="dropBox2"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>VENUS</p>
-  </div>
-  <div
-    id="dropBox3"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>EARTH</p>
-  </div>
-  <div
-    id="dropBox4"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>MARS</p>
-  </div>
-</div><div
-  id="planets"
-  ondrop="drop(event)"
-  ondragover="allowDrop(event)"
->
-  <img
-    id="Mars"
-    src="m.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="EARTH"
-    src="e.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="Venus"
-    src="v.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  /><img
-    id="Mercury"
-    src="me.png"
-    draggable="true"
-    ondragstart="drag(event)"
-    width="300"
-  />
-  
- <script>
-function allowDrop(event) {
-  event.preventDefault();
-}function drag(event) {
-  event.dataTransfer.setData("text", event.target.id);
-}function drop(event) {
-  event.preventDefault();
-  var data = event.dataTransfer.getData("text");
-  event.target.appendChild(document.getElementById(data));
-}
+  <img src="e.png" alt="" class="img-thumbnail">
 
-  </script>
+  <img src="a.png" alt="..." class="img-thumbnail">
+  <img src="o.png" alt="..." class="img-thumbnail">
+<br><a class="erath bg-dnager">EARTH</a>
+  <a class="erath bg-dnager">OCEANS</a>
+  <a class="erath bg-dnager">ATMOSPHERE</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
   </body>
 </html>
