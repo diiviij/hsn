@@ -1,55 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!--  -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ocean</title>
+<html><head>
+ <link rel="stylesheet" href="styles.css">
+ <link rel="javascript" href="index.js">
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- bootstrap css -->
-    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
-    <!-- font-awesome -->
-    <script src="../../js/all.js"></script>
-    <!--google fonts  -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Arvo:700"
-      rel="stylesheet"
-    />
-    <!-- main css -->
-    <link rel="stylesheet" href="../../css/main.css" />
+  <title>WELCOME</title>
+</head>
+<body style="background-image:url('space2.png');">
 
-    <!--  -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- <div class="flex-container1">
-      <img id="logo" src="logo.jpeg" alt="" />
-      <ul class="h11 textcenter">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="categories.html">Categories</a></li>
-      </ul>
-    </div> -->
+   
+ <nav class="navbar navbar-light bg-danger">
+  <a href="home.html " class="navbar-brand ">HOME</a>
+     <a href="about.html" class="navbar-brand">ABOUT</a>
 
-    <audio src="../../img/audio/audio1.mp3" autoplay loop></audio>
+     <a href="funzone.html" class="navbar-brand">FUN ZONE</a>
 
-    <div class="container">
-      <div class="header">
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</nav>
+    
         <h1 style="text-align: center">Ocean</h1>
       </div>
       <div class="row">
         <div class="col-sm-3">
-          <h5 id="option">Exploration Starts Here :</h5>
+          <h5 id="option">Select the view you want  :</h5>
           <div>
             <select class="dropdown" id="mySelect">
               <option>Select</option>
@@ -86,15 +63,10 @@
         </div>
         <div class="col-sm-9" id="globe">
           <canvas id="canvasOne">
-            Your browser does not support HTML5 Canvas.
           </canvas>
         </div>
-        <center>
-          <h2 class="text-light mt-5">
-            Digital globe makes the data interactive and may enable people to
-            discover relationships among ecosystem phenomena.
-          </h2>
-        </center>
+        
+        
       </div>
     </div>
 
@@ -103,7 +75,7 @@
       src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/worldwind.min.js"
       type="text/javascript"
     ></script>
-    <script src="o.js" type="text/javascript"></script>
+    <script src="ocean.js" type="text/javascript"></script>
     <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <!-- jquery -->
     <script src="../../js/jquery-3.3.1.min.js"></script>
