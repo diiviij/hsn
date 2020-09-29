@@ -8,11 +8,10 @@ body{
  
 }
 h1{
-  font-size: 3rem;color:white;text-shadow: 3px 0 white;border-style: solid;
-    border-width: 5px;width:800px;
-}
-h1{
-  border-style=:dashed;border-color:white;font-size: 3rem;color:cyan;text-shadow: 3px 0 white;
+  font-size: 3rem;border-style: solid;
+    border-width: 5px;width:500px;border-left-width:0ex;
+ border-right-width:0ex;
+  border-color:white;font-size: 3rem;color:white;
 }
 img{
   border-radius:70%;width:170px;height:170px;
