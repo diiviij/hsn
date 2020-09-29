@@ -1,7 +1,7 @@
 
 nav{
   
-  background-color:#ff4;
+  background-color:RGB(0,255,205);
 }
 body{
   background-image:url('space2.png');
@@ -19,4 +19,9 @@ img{
 }
 button{
   margin-left:180px;
+  background-color:RGB(204,204,0);
+  padding:15px;
+  border-radius:30px;
+  border-color:cyan;
+  ;
 }
