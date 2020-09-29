@@ -22,9 +22,14 @@ button{
   padding:15px;
   border-radius:30px;
   border-color:cyan;
-  
+  ;
 }
-foot{
-top:70%;
-color:white;
-background-color:RGB(0,255,205);}
+.foot{
+top:80%;
+width:100%;
+height:20%;
+  background-color:RGB(0,255,205);}
+.logo{
+  width:100px;
+  height:100px;
+}
