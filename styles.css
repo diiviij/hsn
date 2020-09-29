@@ -1,3 +1,40 @@
+#logo {
+  height: 40px;
+  width: auto;
+}
+
+body {
+  background: url("../img/catbg.webp") center/cover no-repeat fixed;
+}
+
+#skills {
+  background: url("../img/catbg.webp") center/cover no-repeat fixed;
+}
+
+.title-underlinee {
+  border-top: 6px solid white;
+  border-bottom: 6px solid white;
+  display: inline-block;
+  padding: 5px;
+}
+
+.imgc {
+  height: 100px;
+  width: 120px;
+  border-radius: 50%;
+}
+nav{
+  color:black;
+  background-color:orange;
+}
+body{
+  background-image:url('space2.png');
+ 
+}
+h1{
+  font-size: 3rem;color:white;text-shadow: 3px 0 white;border-style: solid;
+    border-width: 5px;width:800px;
+}
 .earth {
   width: 300px;
   height: 300px;
