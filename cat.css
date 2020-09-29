@@ -22,5 +22,9 @@ button{
   padding:15px;
   border-radius:30px;
   border-color:cyan;
-  ;
+  
 }
+foot{
+top:70%;
+color:white;
+background-color:RGB(0,255,205);}
