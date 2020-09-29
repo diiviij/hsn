@@ -1,18 +1,10 @@
-<html lang="en"><!-- 
-    A sample framework for the ESA-NASA WebWorldWind web applications.
-    Author: Bruce Schubert
-    License: MIT
-    See: https://worldwind.arc.nasa.gov/web/ 
-    --><head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="ESA-NASA WebWorldWind application framework with Bootstrap and KnockoutJS by Bruce Schubert">
-        <meta name="author" content="Bruce Schubert">
+<!DOCTYPE html>
+<html lang="en">
+   
+    <head>
         
-        <title>WebWorldWind Example App</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css" type="text/css" />
         <style>
             body {
                 padding-top: 50px;
@@ -86,109 +78,55 @@
     </head>
 
     <body>
-        <!-- Main Menu NavBar -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <!-- Branding and 'hamburger' menu -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navbar" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+     
+                
                     
-                </div>
                 <!-- Navigation links, Projections and Search Box -->
-                <div class="collapse navbar-collapse" id="main-navbar">
-                    <ul class="nav navbar-nav" role="tablist">
-                        <!-- Home -->
-                        <li class="active">
-                            <a href="#home" role="tab" data-toggle="tab">
-                                <span class="glyphicon glyphicon-home visible-sm-block" aria-hidden="true" style="padding-top:4px; padding-bottom:4px"></span>
-                                <span class="hidden-sm" aria-hidden="true">Home</span>
-                            </a>
-                        </li>
-                        <!-- Layers -->
-                        <li>
-                            <a href="#layers" role="tab" data-toggle="tab">
-                                <span class="glyphicon glyphicon-list visible-sm-block" aria-hidden="true" style="padding-top:4px; padding-bottom:4px"></span>
-                                <span class="hidden-sm" aria-hidden="true">Layers</span>
-                            </a>
-                        </li>
-                        <!-- Markers -->
-                        <li>
-                            <a href="#markers" role="tab" data-toggle="tab">
-                                <span class="glyphicon glyphicon-map-marker visible-sm-block" aria-hidden="true" style="padding-top:4px; padding-bottom:4px"></span>
-                                <span class="hidden-sm" aria-hidden="true">Markers</span>
-                            </a>
-                        </li>
-                    </ul>
+                
+                  
+                 
                     <!-- Search Box -->
-                    
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Projections dropdown -->
-                        <li id="projections" class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span data-bind="text: currentProjection">3D</span> <span class="caret"></span></a>
-                            <!-- Bind the list to the 'projections' observableArray -->
-                            <ul id="projections-menu" class="dropdown-menu" data-bind="foreach: $root.projections">
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">3D</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">Equirectangular</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">Mercator</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">North Polar</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">South Polar</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">North UPS</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">South UPS</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">North Gnomonic</span></a>
-                                </li>
-                            
-                                <li data-bind="click: $root.changeProjection">
-                                    <a><span data-bind="text: $data">South Gnomonic</span></a>
+                    <div>
+                        <form id="search" class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Destination" id="searchText" data-bind="value: searchText, valueUpdate: 'keyup', event: {keypress: onEnter}" />
+                            </div>
+                            <button id="searchButton" class="btn btn-primary" type="submit" data-bind="click: $root.performSearch">Go To</button>
+                        </form>
+                    </div>
                                 </li>
                             </ul>
                         </li>
                     </ul>
-                <div>
-                        <form id="search" class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Destination" id="searchText" data-bind="value: searchText, valueUpdate: 'keyup', event: {keypress: onEnter}">
-                            </div>
-                            <button id="searchButton" class="btn btn-primary" type="submit" data-bind="click: $root.performSearch">Go To</button>
-                        </form>
-                    </div></div>
+                </div>
                 <!-- /.navbar-collapse -->
-            </div>
             <!-- /.container-fluid -->
-        </nav>
-        <!-- /NavBar -->
 
         <!-- Content -->
         <div class="container-fluid">
             <div class="row">
                 <!-- Sidebar -->
-                
+
+                    <!-- Home tab -->
+                   
+                    <!-- /Home -->
+
+                    <!-- Layers tab -->
+                    <
+                    <!-- /Layer -->
+
+                    <!-- Markers tab -->
+                    
+                                    <!-- Goto Button -->
+                                    <button type="button" class="btn btn-default" data-bind="click: $root.gotoMarker">
+                                        <span><img width="16px" height="16px" data-bind="attr:{src: $data.attributes.imageSource}" />  </span>
+                                        <span data-bind="text: $data.label"></span>
+                                    </button>
+                                    <!-- Edit Button -->
+                                    <button type="button" class="btn btn-default glyphicon glyphicon-pencil" data-bind="click: $root.editMarker"></button>
+                                    
+                    <!-- /Markers -->
+                </div>
                 <!-- /Sidebar -->
 
                 <!-- Main Content -->
@@ -202,53 +140,37 @@
                                     Globe
                                     <!-- Add Marker button and palette -->
                                     <span class="btn-group" style="float: right">
-                                        <button type="button" class="btn btn-primary btn-sm" style="padding-top: 0; padding-bottom: 0;" data-bind="click: $root.addMarker">
+                                        <button type="button" 
+                                                class="btn btn-primary btn-sm"
+                                                style="padding-top: 0; padding-bottom: 0;"
+                                                data-bind="click: $root.addMarker">
                                             <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                            <img data-bind="attr:{src: $root.selectedMarkerImage}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-red.png" width="28px" height="28px;">
+                                            <img width="28px" height="28px;" 
+                                                 data-bind="attr:{src: $root.selectedMarkerImage}"/>
                                         </button>
-                                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <button type="button" 
+                                                class="btn btn-primary btn-sm dropdown-toggle" 
+                                                data-toggle="dropdown" 
+                                                aria-haspopup="true" aria-expanded="false">
                                             <span class="caret"></span>
                                             <span class="sr-only">Markers Dropdown</span>
                                         </button>
                                         <!-- Bind the list to the 'markerPalette' observableArray -->
-                                        <ul id="marker-palette" class="dropdown-menu" style="left: initial; right: 0; min-width: 30px" data-bind="foreach: markerPalette">
+                                        <ul id="marker-palette" 
+                                            class="dropdown-menu" 
+                                            style="left: initial; right: 0; min-width: 30px"
+                                            data-bind="foreach: markerPalette">
                                             <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-red.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-green.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-blue.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-orange.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-teal.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-purple.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-white.png" width="28px" height="28px;"></a>
-                                            </li>
-                                        
-                                            <li data-bind="click: $root.selectedMarkerImage">
-                                                <a><img data-bind="attr:{src: $data}" src="https://files.worldwind.arc.nasa.gov/artifactory/web/0.9.0/images/pushpins/castshadow-black.png" width="28px" height="28px;"></a>
+                                                <a><img width="28px" height="28px;" data-bind="attr:{src: $data}"/></a>
                                             </li>
                                         </ul>
                                     </span>
                                 </h4>
                             </div>
                             <!-- NASA Web World Wind -->
-                            <canvas id="canvasOne" style="width: 100%; height: 100%; background-color: rgb(36, 74, 101); border: 1px solid rgb(0, 0, 0); touch-action: none; cursor: default;" data-bind="style: { cursor: dropIsArmed() ? 'crosshair' : 'default' }" width="928" height="508">
+                            <canvas id="canvasOne" style="width: 100%; height: 100%; 
+                                    background-color: rgb(36,74,101); 
+                                    border:1px solid #000000;" data-bind="style: { cursor: dropIsArmed() ? 'crosshair' : 'default' }">
                                 Try Chrome or FireFox.
                             </canvas>
                             <!-- NASA Web World Wind -->
@@ -262,7 +184,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                         </button>
                         <h4 class="modal-title" id="myModalLabel">Edit Marker</h4>
                     </div>
@@ -753,7 +675,6 @@
             });
         </script>
 
-    
+    </body>
 
-
-</body></html>
+</html>
