@@ -1,7 +1,6 @@
 
 nav{
-  
-  background-color:RGB(0,255,205);
+   background-color:RGB(0,255,205);
 }
 body{
   background-image:url('space3.png');
@@ -25,7 +24,7 @@ button{
   ;
 }
 .foot{
-bottom:80%;
+  margin-top:100%;
 width:100%;
 height:20%;
   background-color:RGB(0,255,205);}
