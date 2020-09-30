@@ -32,7 +32,55 @@ height:20%;
   height:100px;
 }
 
-  .flip-card {
+  .flip-car {
+    margin-right:90%;
+  background-color: transparent;
+  width: 150px;
+  height: 150px;
+  border: 1px solid #f1f1f1;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inne {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-car:hover .flip-card-inne {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-fron, .flip-card-bac {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-fron {
+  background-color: black;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-bac {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+
+.flip-card {
   background-color: transparent;
   width: 150px;
   height: 150px;
@@ -75,3 +123,7 @@ height:20%;
   color: white;
   transform: rotateY(180deg);
 }
+
+
+
+
