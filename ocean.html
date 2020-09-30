@@ -1,4 +1,26 @@
- <div>
+ <html><head>
+ <link rel="stylesheet" href="oz.css">
+ <link rel="javascript" href="index.js">
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body style="background-image:url('space2.png');">
+
+   <!-- Search Box -->
+                    <div>
+                        <form id="search" class="navbar-form navbar-left" role="search">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Destination" id="searchText" data-bind="value: searchText, valueUpdate: 'keyup', event: {keypress: onEnter}" />
+                            </div>
+                            <button id="searchButton" class="btn btn-primary" type="submit" data-bind="click: $root.performSearch">Go To</button>
+                        </form>
+                    </div>
+
+
+
+
+<div>
                         <select class="dropdown" id="mySelect">
                             
                             <option >Select</option>
