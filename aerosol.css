@@ -4,3 +4,12 @@
     width: 100%;
     margin-left:30%
 }
+h1{
+  font-size: 5rem;border-style: solid;
+    border-width: 7px;width:500px;border-left-width:0ex;
+ border-right-width:0ex;
+  border-color:white;font-size: 4rem;color:white;
+}
+button{
+color:red;
+background-color:cyan}
